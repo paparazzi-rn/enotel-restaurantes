@@ -1,0 +1,1013 @@
+@import "tailwindcss";
+
+:root {
+  --enotel-blue: #203e66;
+  --enotel-blue-deep: #112d4f;
+  --enotel-aqua: #37b7c7;
+  --enotel-aqua-light: #dff6f6;
+  --enotel-sand: #f6f2e9;
+  --ink: #10253d;
+  --muted: #607080;
+  --line: rgba(32, 62, 102, 0.14);
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fbfcfc;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  color: inherit;
+}
+
+.site-header {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  height: 112px;
+  justify-content: space-between;
+  padding: 12px clamp(28px, 5.4vw, 76px);
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  align-items: center;
+  color: var(--enotel-blue);
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.brand img {
+  height: 88px;
+  object-fit: contain;
+  width: 89px;
+}
+
+.brand span {
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 18px;
+}
+
+.brand strong {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+}
+
+.brand small {
+  color: var(--enotel-aqua);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.language-switcher {
+  background: #f8fafb;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+}
+
+.header-actions { align-items: center; display: flex; gap: 18px; }
+.admin-entry { color: var(--enotel-blue); font-size: 10px; font-weight: 800; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
+
+.language-switcher button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 11px;
+  height: 38px;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+  width: 42px;
+}
+
+.language-switcher button:hover {
+  transform: translateY(-1px);
+}
+
+.language-switcher button.active {
+  background: var(--enotel-blue);
+  color: var(--white);
+}
+
+.hero {
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0 54%, rgba(229, 248, 248, 0.82)),
+    radial-gradient(circle at 80% 15%, rgba(55, 183, 199, 0.24), transparent 38%);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  min-height: 348px;
+  overflow: hidden;
+  padding: 60px clamp(28px, 6.2vw, 90px);
+  position: relative;
+}
+
+.hero-wash {
+  background:
+    radial-gradient(circle at 82% 52%, rgba(55, 183, 199, 0.16), transparent 34%),
+    linear-gradient(135deg, transparent 52%, rgba(55, 183, 199, 0.08));
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hero-content {
+  max-width: 790px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  align-items: center;
+  color: var(--enotel-aqua);
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 12px;
+  letter-spacing: 0.15em;
+  margin: 0 0 20px;
+}
+
+.eyebrow span {
+  background: var(--enotel-aqua);
+  height: 1px;
+  width: 32px;
+}
+
+.hero h1 {
+  color: var(--enotel-blue-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 5vw, 70px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.03;
+  margin: 0;
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 20px 0 0;
+  max-width: 690px;
+}
+
+.experience-mark {
+  align-items: center;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  position: relative;
+  width: 248px;
+}
+
+.experience-mark::before,
+.experience-mark::after,
+.experience-mark .sun {
+  border: 1px solid rgba(32, 62, 102, 0.15);
+  border-radius: 50%;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.experience-mark::after {
+  inset: 22px;
+}
+
+.experience-mark .sun {
+  border-color: rgba(55, 183, 199, 0.32);
+  inset: 44px;
+}
+
+.experience-mark div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.experience-mark small {
+  color: var(--enotel-blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.experience-mark strong {
+  color: var(--enotel-aqua);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.catalog {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 38px clamp(28px, 4.7vw, 68px) 88px;
+}
+
+.tools {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.search {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(17, 45, 79, 0.045);
+  display: flex;
+  height: 54px;
+  max-width: 410px;
+  padding: 0 17px;
+  width: 100%;
+}
+
+.search svg {
+  fill: none;
+  height: 18px;
+  margin-right: 12px;
+  stroke: var(--enotel-blue);
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  width: 18px;
+}
+
+.search input {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  font-size: 13px;
+  outline: 0;
+  width: 100%;
+}
+
+.search input::placeholder {
+  color: #8a96a1;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filters button {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  min-height: 42px;
+  padding: 0 20px;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.filters button:hover {
+  transform: translateY(-1px);
+}
+
+.filters button.active {
+  background: var(--enotel-blue);
+  border-color: var(--enotel-blue);
+  color: var(--white);
+}
+
+.section-heading {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  margin: 42px 0 22px;
+}
+
+.section-heading p {
+  color: var(--enotel-aqua);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 6px;
+}
+
+.section-heading h2 {
+  color: var(--enotel-blue-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.section-heading > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.restaurant-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.restaurant-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgba(17, 45, 79, 0.055);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.card-trigger {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.card-image {
+  aspect-ratio: 16 / 10;
+  background: var(--enotel-aqua-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease;
+  width: 100%;
+}
+
+.card-trigger:hover .card-image img {
+  transform: scale(1.035);
+}
+
+.status {
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  bottom: 14px;
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  left: 14px;
+  letter-spacing: 0.04em;
+  padding: 8px 11px;
+  position: absolute;
+}
+
+.status.booking {
+  background: rgba(32, 62, 102, 0.9);
+}
+
+.status.open {
+  background: rgba(26, 139, 151, 0.9);
+}
+
+.card-copy {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 19px 20px 21px;
+}
+
+.card-copy h3 {
+  color: var(--enotel-blue-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 7px;
+}
+
+.card-copy p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.arrow {
+  align-items: center;
+  background: var(--enotel-aqua-light);
+  border-radius: 50%;
+  color: var(--enotel-blue);
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 18px;
+  height: 38px;
+  justify-content: center;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+  width: 38px;
+}
+
+.card-trigger:hover .arrow {
+  background: var(--enotel-aqua);
+  color: var(--white);
+}
+
+.empty-state {
+  align-items: center;
+  background: var(--enotel-sand);
+  border: 1px dashed rgba(32, 62, 102, 0.24);
+  border-radius: 22px;
+  color: var(--muted);
+  display: flex;
+  justify-content: center;
+  min-height: 160px;
+}
+
+.modal-backdrop {
+  align-items: center;
+  background: rgba(7, 27, 48, 0.68);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 40;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 26px;
+  box-shadow: 0 30px 100px rgba(2, 20, 38, 0.35);
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  max-height: calc(100vh - 48px);
+  max-width: 900px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.modal > img {
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.modal-copy {
+  padding: 52px 42px 40px;
+}
+
+.modal-copy h2 {
+  color: var(--enotel-blue-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  margin: 0 0 12px;
+}
+
+.modal-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.eyebrow.compact {
+  font-size: 10px;
+  margin-bottom: 12px;
+}
+
+.modal dl {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+  margin: 26px 0 20px;
+  padding: 20px 0;
+}
+
+.modal dl div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal dt {
+  color: var(--enotel-aqua);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.modal dd {
+  color: var(--enotel-blue-deep);
+  font-size: 13px;
+  margin: 0;
+}
+
+.prototype-note {
+  font-size: 12px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.modal-actions button {
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 46px;
+  padding: 0 20px;
+}
+
+.modal-actions .primary {
+  background: var(--enotel-blue);
+  border: 1px solid var(--enotel-blue);
+  color: var(--white);
+}
+
+.modal-actions .secondary {
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--enotel-blue);
+}
+
+.menu-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.menu-links a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--enotel-blue);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+.primary.full {
+  background: var(--enotel-blue);
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 48px;
+  width: 100%;
+}
+.booking-modal { max-width: 980px; }
+.reservation-copy { overflow-y: auto; }
+.reservation-copy h2 { font-size: 34px; }
+.booking-back { background: transparent; border: 0; color: var(--enotel-aqua); cursor: pointer; margin: 0 0 15px; padding: 0; }
+.booking-restaurant { font-size: 12px; margin: -5px 0 18px !important; }
+.booking-form { display: grid; gap: 13px; }
+.booking-form > div { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+.booking-form label { color: #53697b; display: grid; font-size: 10px; font-weight: 700; gap: 6px; }
+.booking-form input,
+.booking-form textarea {
+  background: #fbfcfd;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  min-height: 42px;
+  outline: 0;
+  padding: 0 11px;
+}
+.booking-form textarea { min-height: 58px; padding: 10px 11px; resize: vertical; }
+.reservation-error { color: #b13f3f !important; font-size: 11px; margin: 0 !important; }
+.reservation-success { align-items: center; display: flex; flex-direction: column; justify-content: center; min-height: 390px; text-align: center; }
+.reservation-success > span { align-items: center; background: #daf4ef; border-radius: 50%; color: #1b806f; display: flex; font-size: 28px; height: 64px; justify-content: center; width: 64px; }
+.reservation-success h2 { margin: 20px 0 5px; }
+.reservation-success strong { color: var(--enotel-blue); font-size: 25px; letter-spacing: .08em; margin: 12px 0 25px; }
+
+.modal-close {
+  align-items: center;
+  background: var(--white);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 8px 22px rgba(9, 35, 59, 0.2);
+  cursor: pointer;
+  display: flex;
+  font-size: 25px;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 40px;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 220px;
+  }
+
+  .experience-mark {
+    width: 190px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .restaurant-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 9px);
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    height: 92px;
+    padding: 10px 18px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .language-switcher button {
+    height: 34px;
+    width: 36px;
+  }
+
+  .header-actions { gap: 8px; }
+  .admin-entry { display: none; }
+
+  .hero {
+    display: block;
+    min-height: 355px;
+    padding: 54px 24px 62px;
+  }
+
+  .hero h1 {
+    font-size: clamp(45px, 14vw, 60px);
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .experience-mark {
+    opacity: 0.17;
+    position: absolute;
+    right: -45px;
+    top: 38px;
+    width: 210px;
+  }
+
+  .catalog {
+    padding: 28px 18px 64px;
+  }
+
+  .tools {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .search {
+    max-width: none;
+  }
+
+  .filters {
+    overflow-x: auto;
+    padding-bottom: 3px;
+  }
+
+  .filters button {
+    flex: 0 0 auto;
+  }
+
+  .section-heading {
+    margin-top: 34px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .modal {
+    display: block;
+    max-height: calc(100vh - 28px);
+    overflow-y: auto;
+  }
+
+  .modal > img {
+    height: 230px;
+    min-height: 0;
+  }
+
+  .modal-copy {
+    padding: 30px 24px 26px;
+  }
+
+  .modal-copy h2 {
+    font-size: 34px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .booking-form > div { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Enotel administration */
+.admin-loading,
+.admin-login {
+  align-items: center;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(55, 183, 199, 0.2), transparent 30%),
+    linear-gradient(145deg, #102d4e, #1d4d70);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.admin-loading { color: white; }
+
+.login-card {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 32px 90px rgba(4, 24, 46, 0.32);
+  max-width: 450px;
+  padding: 40px;
+  width: 100%;
+}
+
+.admin-logo img { height: 82px; object-fit: contain; width: 120px; }
+.login-card > p,
+.admin-topbar p,
+.panel-title p,
+.restaurant-editor header p {
+  color: var(--enotel-aqua);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin: 16px 0 7px;
+}
+.login-card h1 { color: var(--enotel-blue-deep); font: 400 38px/1.1 Georgia, serif; margin: 0 0 10px; }
+.login-card > span { color: var(--muted); display: block; font-size: 13px; line-height: 1.6; margin-bottom: 28px; }
+.login-card form { display: grid; gap: 16px; }
+.login-card label,
+.restaurant-editor label {
+  color: #4c6175;
+  display: grid;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 7px;
+}
+.login-card input,
+.restaurant-editor input,
+.restaurant-editor textarea,
+.reservation-filters input,
+.reservation-filters select {
+  background: #fbfcfd;
+  border: 1px solid rgba(32, 62, 102, 0.18);
+  border-radius: 12px;
+  color: var(--ink);
+  min-height: 46px;
+  outline: 0;
+  padding: 0 13px;
+}
+.login-card input:focus,
+.restaurant-editor input:focus,
+.restaurant-editor textarea:focus { border-color: var(--enotel-aqua); box-shadow: 0 0 0 3px rgba(55, 183, 199, 0.12); }
+.form-error { color: #b64141; font-size: 12px; }
+.admin-primary {
+  background: var(--enotel-blue);
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 48px;
+  padding: 0 22px;
+}
+.admin-primary.compact { min-height: 42px; }
+.back-link { color: var(--enotel-blue); display: block; font-size: 12px; margin-top: 22px; text-align: center; text-decoration: none; }
+
+.admin-shell { background: #f3f6f7; display: grid; grid-template-columns: 245px minmax(0, 1fr); min-height: 100vh; }
+.admin-sidebar {
+  background: var(--enotel-blue-deep);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 28px 18px;
+  position: sticky;
+  top: 0;
+}
+.sidebar-brand { align-items: center; color: white; display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; text-decoration: none; }
+.sidebar-brand img { background: white; border-radius: 14px; height: 76px; object-fit: contain; padding: 7px; width: 88px; }
+.sidebar-brand span { font-size: 9px; font-weight: 800; letter-spacing: 0.17em; }
+.admin-sidebar nav { display: grid; gap: 8px; }
+.admin-sidebar nav button,
+.logout-button {
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 14px 16px;
+  text-align: left;
+}
+.admin-sidebar nav button.active { background: rgba(55,183,199,.18); color: white; }
+.logout-button { border-top: 1px solid rgba(255,255,255,.12); border-radius: 0; margin-top: auto; }
+.admin-content { min-width: 0; padding: 34px clamp(24px, 4vw, 58px) 70px; }
+.admin-topbar { align-items: center; display: flex; justify-content: space-between; margin-bottom: 28px; }
+.admin-topbar p { margin-top: 0; }
+.admin-topbar h1 { color: var(--enotel-blue-deep); font: 400 38px/1 Georgia, serif; margin: 0; }
+.admin-user { align-items: center; color: var(--muted); display: flex; font-size: 12px; gap: 12px; }
+.admin-user strong { align-items: center; background: var(--enotel-blue); border-radius: 50%; color: white; display: flex; height: 40px; justify-content: center; width: 40px; }
+.admin-notice { background: #daf4f1; border: 0; border-radius: 12px; color: #17695f; cursor: pointer; margin-bottom: 18px; padding: 12px 16px; width: 100%; }
+
+.period-toolbar {
+  align-items: center;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 10px;
+}
+.period-tabs { display: flex; gap: 4px; }
+.period-tabs button,
+.date-navigation button,
+.panel-title > button:not(.admin-primary) {
+  background: transparent;
+  border: 0;
+  border-radius: 9px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+.period-tabs button.active { background: var(--enotel-blue); color: white; }
+.date-navigation { align-items: center; display: flex; gap: 4px; }
+.date-navigation button { font-size: 22px; padding: 4px 11px; }
+.date-navigation label { cursor: pointer; position: relative; }
+.date-navigation label span { color: var(--enotel-blue); display: block; font-size: 12px; min-width: 230px; padding: 10px 12px; text-align: center; }
+.date-navigation input { inset: 0; opacity: 0; position: absolute; width: 100%; }
+.metric-grid { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); margin-bottom: 18px; }
+.metric-grid article { background: white; border: 1px solid var(--line); border-radius: 17px; padding: 20px; }
+.metric-grid span { color: var(--muted); display: block; font-size: 11px; }
+.metric-grid strong { color: var(--enotel-blue-deep); display: block; font: 400 34px Georgia, serif; margin: 9px 0 5px; }
+.metric-grid small { color: #92a0ab; font-size: 10px; }
+.admin-panel { background: white; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; padding: 24px; }
+.panel-title { align-items: center; display: flex; justify-content: space-between; margin-bottom: 20px; }
+.panel-title p { margin-top: 0; }
+.panel-title h2 { color: var(--enotel-blue-deep); font: 400 27px Georgia, serif; margin: 0; }
+.panel-title > button:not(.admin-primary) { color: var(--enotel-blue); font-weight: 700; }
+
+.reservation-filters { display: grid; gap: 10px; grid-template-columns: 1.3fr 1fr 1fr; margin-bottom: 18px; }
+.reservation-filters select { padding-right: 10px; }
+.table-scroll { overflow-x: auto; }
+.reservation-table { border-collapse: collapse; min-width: 760px; width: 100%; }
+.reservation-table th { border-bottom: 1px solid var(--line); color: #8a98a5; font-size: 9px; letter-spacing: .1em; padding: 11px 10px; text-align: left; text-transform: uppercase; }
+.reservation-table td { border-bottom: 1px solid rgba(32,62,102,.08); color: #42586b; font-size: 12px; padding: 14px 10px; }
+.reservation-table td strong { color: var(--enotel-blue-deep); display: block; }
+.reservation-table td small { color: #8a98a5; display: block; font-size: 10px; margin-top: 4px; }
+.status-select { border: 0; border-radius: 999px; color: #385269; font-size: 10px; font-weight: 700; padding: 7px 9px; }
+.status-select.confirmed { background: #dff4f6; color: #187681; }
+.status-select.seated { background: #e8e5ff; color: #57469f; }
+.status-select.completed { background: #e4f4e5; color: #34733b; }
+.status-select.cancelled { background: #f8e3e3; color: #9a3a3a; }
+.admin-empty { color: var(--muted); padding: 48px 20px; text-align: center; }
+
+.admin-restaurant-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.admin-restaurant-grid article { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.admin-restaurant-grid article.inactive { opacity: .55; }
+.admin-restaurant-grid article > img { aspect-ratio: 16/9; background: #e9f3f4; object-fit: cover; width: 100%; }
+.admin-restaurant-grid article > div { padding: 17px; }
+.admin-restaurant-grid article span { color: var(--enotel-aqua); font-size: 8px; font-weight: 800; letter-spacing: .14em; }
+.admin-restaurant-grid h3 { color: var(--enotel-blue-deep); font: 400 22px Georgia, serif; margin: 6px 0; }
+.admin-restaurant-grid p,
+.admin-restaurant-grid small { color: var(--muted); display: block; font-size: 10px; margin: 0 0 6px; }
+.card-admin-actions { display: flex; gap: 8px; margin-top: 14px; }
+.card-admin-actions button { background: white; border: 1px solid var(--line); border-radius: 9px; color: var(--enotel-blue); cursor: pointer; font-size: 10px; min-height: 34px; padding: 0 12px; }
+
+.editor-backdrop { align-items: stretch; background: rgba(6,25,44,.68); display: flex; inset: 0; justify-content: flex-end; position: fixed; z-index: 100; }
+.restaurant-editor { background: white; box-shadow: -20px 0 60px rgba(0,0,0,.2); display: flex; flex-direction: column; max-width: 650px; width: 100%; }
+.restaurant-editor header { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 24px 28px; }
+.restaurant-editor header p { margin-top: 0; }
+.restaurant-editor header h2 { color: var(--enotel-blue-deep); font: 400 28px Georgia, serif; margin: 0; }
+.restaurant-editor header > button { background: #f1f5f6; border: 0; border-radius: 50%; cursor: pointer; font-size: 23px; height: 40px; width: 40px; }
+.editor-scroll { display: grid; gap: 15px; overflow-y: auto; padding: 24px 28px; }
+.editor-scroll h3 { border-bottom: 1px solid var(--line); color: var(--enotel-blue); font-size: 12px; margin: 7px 0 0; padding-bottom: 9px; }
+.restaurant-editor textarea { min-height: 82px; padding: 12px 13px; resize: vertical; }
+.editor-columns { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.editor-checks { display: flex; gap: 22px; }
+.editor-checks label { align-items: center; display: flex; flex-direction: row; }
+.editor-checks input { min-height: 0; }
+.restaurant-editor footer { border-top: 1px solid var(--line); display: flex; gap: 10px; justify-content: flex-end; padding: 18px 28px; }
+.restaurant-editor footer > button:not(.admin-primary) { background: white; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; padding: 0 22px; }
+.admin-mobile-nav { display: none; }
+
+@media (max-width: 1050px) {
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-restaurant-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .admin-shell { display: block; }
+  .admin-sidebar { display: none; }
+  .admin-content { padding: 24px 16px 90px; }
+  .admin-topbar h1 { font-size: 31px; }
+  .admin-user span { display: none; }
+  .period-toolbar { align-items: stretch; flex-direction: column; }
+  .date-navigation { justify-content: space-between; }
+  .date-navigation label span { min-width: 190px; }
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .metric-grid article { padding: 16px; }
+  .reservation-filters { grid-template-columns: 1fr; }
+  .admin-restaurant-grid { grid-template-columns: 1fr; }
+  .admin-mobile-nav {
+    background: white;
+    border-top: 1px solid var(--line);
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    left: 0;
+    padding: 8px;
+    position: fixed;
+    right: 0;
+    z-index: 30;
+  }
+  .admin-mobile-nav button { background: transparent; border: 0; color: var(--enotel-blue); font-size: 10px; padding: 11px 4px; }
+  .editor-columns { grid-template-columns: 1fr; }
+  .login-card { padding: 30px 24px; }
+}
